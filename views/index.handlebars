@@ -1,0 +1,48 @@
+<h1>Burger Time!</h1>
+
+<h2>Burgers to Devour:</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+        <li>
+            {{burger_name}}
+            <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+            EAT ME!
+            </button>
+        </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers Already Devoured:</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      <li>
+            {{burger_name}}
+            <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+            UN-EAT ME!
+            </button>
+        </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burg">Burger Name:</label>
+    <input type="text" id="burg" name="burger_name">
+  </div>
+
+  <div class="form-group">
+    <label for="devour">Has this burger been devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not yet Devoured!
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
