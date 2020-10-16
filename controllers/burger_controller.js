@@ -1,10 +1,14 @@
+//==============
+// Dependencies
+//==============
 const express = require("express");
-const burger = require("../models/burger.js");
 const router = express.Router();
-const cat = require("../models/burger.js");
-
+const burger = require("../models/burger.js");
+//=======================================================
+// Sets up the read function from the back-end (database)
+//=======================================================
 router.get("/", function(req, res) {
-  cat.all(function(data) {
+  burger.selectAll(function(data) {
     let hbsObject = {
       burgers: data
     };
@@ -12,7 +16,9 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-
+//=====================================================
+// Sets up create function from the back-end (database)
+//=====================================================
 router.post("/api/burgers", function(req, res) {
   burger.insertOne([
     "burger_name", "devoured"
@@ -22,7 +28,9 @@ router.post("/api/burgers", function(req, res) {
     res.json({ id: result.insertId });
   });
 });
-
+//=====================================================
+// Sets up update function from the back-end (database)
+//=====================================================
 router.put("/api/burgers/:id", function(req, res) {
   let condition = "id = " + req.params.id;
 
@@ -38,6 +46,7 @@ router.put("/api/burgers/:id", function(req, res) {
     }
   });
 });
-
-// Export routes for server.js to use.
+//====================
+// Exports the router
+//====================
 module.exports = router;
