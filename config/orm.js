@@ -1,7 +1,7 @@
 // Dependencies
 const connection = require("./connection.js");
 
-// Helper function for SQL syntax.
+// Helper function for SQL syntax
 function printQuestionMarks(num) {
   let arr = [];
   for (let i = 0; i < num; i++) {
@@ -26,7 +26,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+// Object for all our SQL functions
 let orm = {
   // Selects everything from the burgers database
   selectAll: function(tableInput, cb) {

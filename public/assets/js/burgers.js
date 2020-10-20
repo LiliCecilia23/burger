@@ -25,7 +25,7 @@ $(function() {
         
         //grabes the name of the burger and devoured state from the form
         let newBurger = {
-            name: $("#burg").val().trim(),
+            burger_name: $("#burg").val().trim(),
             devoured: $("[name=devoured]:checked").val().trim()
         };
   
@@ -35,7 +35,6 @@ $(function() {
             data: newBurger
         }).then(
         function() {
-            console.log("created new burger");
             location.reload();
         }
         );
