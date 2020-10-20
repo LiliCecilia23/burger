@@ -6,7 +6,41 @@ h1 {
     padding-top: 10px;
 }
 
+.navbar {
+    text-align: center;
+}
 
+.holder {
+    background-color: #F28B30;
+    color: #132623;
+}
+
+.adder {
+    background-color:#132623;
+    color: #F28B30;
+    width: fit-content;
+    text-align: center;
+}
+
+.btn {
+    background-color: #D96941;
+    border: solid 3px #8C2E26;
+    color: #8C2E26;
+    margin-top: 3px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.list-group-item {
+    font-size: 17pt;
+}
+
+.permanent {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
 body {
     background-color: #F2AF5C;
 }

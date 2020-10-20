@@ -1,49 +1,60 @@
-<h1>Burger Time</h1>
-
-<h2>Burgers to Devour:</h2>
-<img src="../public/assets/img/burger.png" alt="cartoon burger">
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-        <li>
-            {{burger_name}}
-            <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-            EAT ME!
-            </button>
-        </li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers Already Devoured:</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      <li>
-            {{burger_name}}
-            <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-            UN-EAT ME!
-            </button>
-        </li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="burger_name">
+<nav class="navbar mx-auto">
+  <img src="assets/img/cartoonburger.png" height="55px" alt="cartoon burger">
+  <h1>Burger Time</h1>
+  <img src="assets/img/cartoonburger.png" height="55px" alt="cartoon burger">
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col p-3 rounded m-3 holder">
+      <h2 class="permanent text-center">Burgers to Devour:</h2>
+      {{!-- <img src="assets/img/cartoonburger.png" alt="cartoon burger"> --}}
+      <ul class="oswald p-1 list-group">
+        {{#each burgers}}
+          {{#unless devoured}}
+              <li class="list-group-item">
+                {{burger_name}}
+                <button class="change-devoured btn float-right" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                EAT ME!
+                </button>
+              </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    
+    <div class="col p-3 rounded m-3 holder">
+      <h2 class="permanent text-center">Burgers Already Devoured:</h2>
+      <ul class="oswald p-1 list-group">
+        {{#each burgers}}
+          {{#if devoured}}
+            <li class="list-group-item">
+                {{burger_name}}
+                <button class="change-devoured btn float-right" data-id="{{id}}" data-newdevoured="{{devoured}}">
+                UN-EAT ME!
+                </button>
+              </li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
+</div>
 
-  <div class="form-group">
-    <label for="devour">Has this burger been devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Not yet Devoured!
-  </div>
+<div class="container p-5 rounded mx-auto mt-3 adder">
+  <h2 class="permanent">Add a Burger</h2>
+  <form class="create-form oswald">
 
-  <button type="submit">Add Burger</button>
-</form>
+    <div class="form-group">
+      <label for="burg">Burger Name:</label>
+      <input type="text" id="burg" name="burger_name">
+    </div>
+
+    <div class="form-group">
+      <label for="devour">Has this burger been devoured?</label><br>
+      <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+      <input type="radio" name="devoured" value="0"> Not yet Devoured!
+    </div>
+
+    <button class="btn" type="submit">Add Burger</button>
+  </form>
+</div>
