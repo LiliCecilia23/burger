@@ -20,7 +20,7 @@ function objToSql(ob) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      arr.push(key + "=" + value);
+      arr.push(key + " = " + value);
     }
   }
   return arr.toString();
@@ -50,13 +50,10 @@ let orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log(queryString);
-
     connection.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
@@ -70,12 +67,10 @@ let orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   }

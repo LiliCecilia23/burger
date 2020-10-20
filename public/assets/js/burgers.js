@@ -3,9 +3,15 @@ $(function() {
       
         let id = $(this).data("id");
         let newDevoured = $(this).data("newdevoured");
-  
+        let devouredValue;
+        if (newDevoured === 1){
+            devouredValue = 0;
+        } else if (newDevoured === 0){
+            devouredValue = 1;
+        }
+        
         let newDevouredState = {
-            devoured: newDevoured
+            devoured: devouredValue
         };
 
         // Sets up update function from the front-end
