@@ -18,14 +18,6 @@ let routes = require("./controllers/burger_controller");
 
 app.use(routes);
 
-// Timeout
-app.use(timeout(15000));
-app.use(haltOnTimedout);
-
-function haltOnTimedout(req, res, next) {
-    if (!req.timedout) next();
-}
-
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
