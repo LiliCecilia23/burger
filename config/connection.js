@@ -1,9 +1,13 @@
 // Set up MySQL connection
 const mysql = require("mysql");
 let connection;
+let jaws = "mysql://j6srevpas0mf8h4t:rexruike78epl9kb@vrk7xcrab1wsx4r1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/qtbvbg9c055pszui"
 
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+console.log(process.env.JAWSDB_URL)
+
+if (jaws) {
+  connection = mysql.createConnection(jaws);
 } else {
   connection = mysql.createConnection({
     host: "localhost",
